@@ -1,0 +1,125 @@
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif; /* Use a simple font */
+    background-color: #121212; /* Very Dark Gray */
+    color: #E0E0E0; /* Light Gray */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #4CAF50; /* Dark Green */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows navbar items to wrap on smaller screens */
+}
+
+.navbar-brand {
+    color: #121212; /* Dark text */
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.nav-link {
+    color: #121212; /* Dark text */
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #66BB6A; /* Light Green hover effect */
+}
+
+/* Hero Section Styles */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #4CAF50, #388E3C); /* Gradient from Dark Green to a Deeper Green */
+    color: #E0E0E0; /* Light Gray */
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #4CAF50; /* Dark Green */
+    color: #121212; /* Dark text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #66BB6A; /* Light Green hover effect */
+}
+
+/* Projects Section Styles */
+#projects {
+    padding: 50px 20px;
+}
+
+.project-card {
+    background-color: #1E1E1E; /* Dark Gray for contrast */
+    border: 2px solid #4CAF50; /* Dark Green border */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
+}
+
+/* Project Card Headings */
+.project-card h3 {
+    color: #4CAF50; /* Dark Green */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #0d1117; /* Dark footer to stand out */
+    color: #E0E0E0; /* Light Gray text */
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Accessibility Styles */
+a:focus {
+    outline: 2px dashed #66BB6A; /* Light Green outline for focus */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Adjust navbar and font sizes for smaller screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align left */
+    }
+    
+    .nav-link {
+        padding: 8px 5px; /* Adjust padding */
+    }
+
+    .hero {
+        padding: 30px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .btn-primary {
+        width: 100%; /* Make button full-width on small screens */
+    }
+}
+
+/* Adjust project cards for smaller screens */
+@media (max-width: 480px) {
+    .project-card {
+        padding: 15px; /* Adjust padding */
+    }
+
+    #projects {
+        padding: 30px 10px; /* Adjust padding */
+    }
+}
+
+
