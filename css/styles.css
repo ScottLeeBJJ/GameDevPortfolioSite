@@ -40,6 +40,26 @@ body {
     padding: 50px 20px;
     background: linear-gradient(to bottom, #4CAF50, #388E3C); /* Gradient from Dark Green to a Deeper Green */
     color: #E0E0E0; /* Light Gray */
+    position: relative; /* Position relative for overlay */
+    min-height: 50vh; /* Minimum height to be half the viewport height */
+    margin-bottom: 50px; /* Space below the hero section */
+}
+
+.hero-img {
+    width: 100%; /* Make the hero image responsive */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Position absolute to fill the hero section */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Ensure image is below overlay content */
+    object-fit: cover; /* Cover the entire section */
+}
+
+.hero-overlay {
+    position: relative; /* Keep the overlay above the image */
+    z-index: 2; /* Ensure overlay is above the image */
 }
 
 /* Button Styles */
@@ -51,6 +71,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-decoration: none; /* Remove underline for links */
 }
 
 .btn-primary:hover {
@@ -59,7 +80,8 @@ body {
 
 /* Projects Section Styles */
 #projects {
-    padding: 50px 20px;
+    padding: 50px 20px; /* Maintain padding */
+    margin-top: 20px; /* Add space above projects section */
 }
 
 .project-card {
@@ -69,6 +91,11 @@ body {
     padding: 20px;
     margin: 10px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
+    transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.project-card:hover {
+    transform: scale(1.02); /* Slightly scale on hover for effect */
 }
 
 /* Project Card Headings */
@@ -108,6 +135,7 @@ a:focus {
 
     .btn-primary {
         width: 100%; /* Make button full-width on small screens */
+        display: inline-block; /* Ensure it's displayed as a block */
     }
 }
 
@@ -121,5 +149,3 @@ a:focus {
         padding: 30px 10px; /* Adjust padding */
     }
 }
-
-
