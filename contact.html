@@ -1,49 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Scott Lee's Portfolio</title>
-  <link rel="stylesheet" href="css/styles.css"> <!-- Original stylesheet -->
-  <link rel="stylesheet" href="css/contact-styles.css"> <!-- New stylesheet -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Scott Lee</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Updated href for main styles -->
+    <link rel="stylesheet" href="css/contact-styles.css"> <!-- Link for contact form styles -->
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <a href="index.html" class="navbar-brand">Scott Lee</a>
-    <div>
-      <a href="game-projects.html" class="nav-link">Game Projects</a>
-      <a href="web-projects.html" class="nav-link">Web Projects</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </div>
-  </nav>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">Scott Lee</a>
+        <div>
+            <a href="game-projects.html" class="nav-link">Game Projects</a>
+            <a href="web-projects.html" class="nav-link">Web Projects</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+    </nav>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>If you have any questions or want to get in touch, feel free to fill out the form below!</p>
-    <form action="send_email.php" method="POST"> <!-- Updated action -->
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+    <!-- Contact Form Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form" method="POST" action="contact.php">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="1234567890">
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-      <button type="submit" class="btn-primary">Send Message</button>
-    </form>
-  </section>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Scott Lee. All rights reserved. | U.S. Army Veteran Owned</p>
-  </footer>
+            <!-- CAPTCHA Section -->
+            <div class="captcha">
+                <label id="captcha-question" for="captcha"></label>
+                <input type="text" id="captcha" name="captcha" required>
+                <input type="hidden" id="captcha-answer" name="captcha-answer">
+            </div>
 
-  <script src="js/contact-script.js" defer></script> <!-- Link to JavaScript file -->
+            <button type="submit">Send Message</button>
+        </form>
+        <div id="response-message"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Scott Lee. All rights reserved. | U.S. Army Veteran Owned</p>
+    </footer>
+
+    <script>
+    // Function to generate a random CAPTCHA question
+    function generateCaptcha() {
+        const num1 = Math.floor(Math.random() * 10);
+        const num2 = Math.floor(Math.random() * 10);
+        const operator = Math.random() < 0.5 ? '+' : '-';
+        const question = `${num1} ${operator} ${num2}`;
+        
+        document.getElementById('captcha-question').innerText = `What is ${question}?`;
+        document.getElementById('captcha-answer').value = eval(question); // Evaluate the expression to get the answer
+    }
+
+    // Call the function to generate the CAPTCHA on page load
+    window.onload = generateCaptcha;
+
+    document.getElementById("contact-form").onsubmit = function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Create a FormData object
+        var formData = new FormData(this);
+
+        // Send the data using fetch API
+        fetch('contact.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            // Show success or error message
+            document.getElementById("response-message").innerText = data === "success" ? "Message sent!" : (data === "invalid captcha" ? "Please answer the CAPTCHA correctly." : "Error sending message.");
+        })
+        .catch(error => {
+            document.getElementById("response-message").innerText = "Error sending message.";
+        });
+    };
+    </script>
 
 </body>
 </html>
