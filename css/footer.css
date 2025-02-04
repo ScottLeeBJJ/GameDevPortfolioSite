@@ -1,0 +1,7 @@
+/* Footer Styles */
+footer {
+    background-color: #0d1117; /* Dark footer to stand out */
+    color: #E0E0E0; /* Light Gray text */
+    text-align: center;
+    padding: 20px 0;
+}

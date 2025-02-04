@@ -1,0 +1,33 @@
+/* Game Projects Section Styles */
+#projects {
+    padding: 50px 20px; /* Maintain padding */
+    margin-top: 20px; /* Add space above projects section */
+}
+
+.project-card {
+    background-color: #1E1E1E; /* Dark Gray for contrast */
+    border: 2px solid #4CAF50; /* Dark Green border */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
+    transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.project-card:hover {
+    transform: scale(1.02); /* Slightly scale on hover for effect */
+}
+
+.project-card img {
+    width: 100%;
+}
+
+/* Project Card Headings */
+.project-card h3 {
+    color: #4CAF50; /* Dark Green */
+}
+
+/* Accessibility Styles */
+a:focus {
+    outline: 2px dashed #66BB6A; /* Light Green outline for focus */
+}

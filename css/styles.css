@@ -7,61 +7,6 @@ body {
     padding: 0;
 }
 
-/* Navbar Styles */
-.navbar {
-    background-color: #4CAF50; /* Dark Green */
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Allows navbar items to wrap on smaller screens */
-}
-
-.navbar-brand {
-    color: #121212; /* Dark text */
-    text-decoration: none;
-    font-size: 24px;
-}
-
-.nav-link {
-    color: #121212; /* Dark text */
-    text-decoration: none;
-    padding: 10px;
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: #66BB6A; /* Light Green hover effect */
-}
-
-/* Hero Section Styles */
-.hero {
-    text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(to bottom, #4CAF50, #388E3C); /* Gradient from Dark Green to a Deeper Green */
-    color: #E0E0E0; /* Light Gray */
-    position: relative; /* Position relative for overlay */
-    min-height: 50vh; /* Minimum height to be half the viewport height */
-    margin-bottom: 50px; /* Space below the hero section */
-}
-
-.hero-img {
-    width: 100%; /* Make the hero image responsive */
-    height: auto; /* Maintain aspect ratio */
-    position: absolute; /* Position absolute to fill the hero section */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1; /* Ensure image is below overlay content */
-    object-fit: cover; /* Cover the entire section */
-}
-
-.hero-overlay {
-    position: relative; /* Keep the overlay above the image */
-    z-index: 2; /* Ensure overlay is above the image */
-}
-
 /* Button Styles */
 .btn-primary {
     background-color: #4CAF50; /* Dark Green */
@@ -78,43 +23,6 @@ body {
     background-color: #66BB6A; /* Light Green hover effect */
 }
 
-/* Projects Section Styles */
-#projects {
-    padding: 50px 20px; /* Maintain padding */
-    margin-top: 20px; /* Add space above projects section */
-}
-
-.project-card {
-    background-color: #1E1E1E; /* Dark Gray for contrast */
-    border: 2px solid #4CAF50; /* Dark Green border */
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
-    transition: transform 0.3s ease; /* Add hover effect */
-}
-
-.project-card:hover {
-    transform: scale(1.02); /* Slightly scale on hover for effect */
-}
-
-/* Project Card Headings */
-.project-card h3 {
-    color: #4CAF50; /* Dark Green */
-}
-
-/* Footer Styles */
-footer {
-    background-color: #0d1117; /* Dark footer to stand out */
-    color: #E0E0E0; /* Light Gray text */
-    text-align: center;
-    padding: 20px 0;
-}
-
-/* Accessibility Styles */
-a:focus {
-    outline: 2px dashed #66BB6A; /* Light Green outline for focus */
-}
 
 /* Media Queries for Responsiveness */
 

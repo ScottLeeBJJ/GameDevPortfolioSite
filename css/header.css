@@ -1,0 +1,26 @@
+/* Navbar Styles */
+.navbar {
+    background-color: #4CAF50; /* Dark Green */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows navbar items to wrap on smaller screens */
+}
+
+.navbar-brand {
+    color: #121212; /* Dark text */
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.nav-link {
+    color: #121212; /* Dark text */
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #66BB6A; /* Light Green hover effect */
+}
