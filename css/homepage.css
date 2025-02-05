@@ -9,19 +9,20 @@
     margin-bottom: 50px; /* Space below the hero section */
 }
 
+/* Hero image styling */
 .hero-img {
     width: 100%; /* Make the hero image responsive */
-    height: auto; /* Maintain aspect ratio */
+    height: 100%; /* Make sure the image fills the hero section */
     position: absolute; /* Position absolute to fill the hero section */
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
     z-index: 1; /* Ensure image is below overlay content */
     object-fit: cover; /* Cover the entire section */
 }
 
+/* Overlay Styling */
 .hero-overlay {
     position: relative; /* Keep the overlay above the image */
     z-index: 2; /* Ensure overlay is above the image */
+    padding: 20px;
 }
