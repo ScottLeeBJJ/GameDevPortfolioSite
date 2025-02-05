@@ -6,11 +6,11 @@
 
 .project-card {
     background-color: #1E1E1E; /* Dark Gray for contrast */
-    border: 2px solid #4CAF50; /* Dark Green border */
+    border: 2px solid #FFB7C5; /* Pink border */
     border-radius: 10px;
     padding: 20px;
     margin: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
+    box-shadow: 0 4px 8px #FFB7C5; /* Darker shadow for depth */
     transition: transform 0.3s ease; /* Add hover effect */
 }
 
@@ -23,16 +23,16 @@
     height: auto;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1), 0 0 15px rgba(0, 255, 255, 0.2); /* Light shadow with a slight glow */
+    box-shadow: 0 4px 8px #FFB7C5, 0 0 15px #F1A7C1; /* Light shadow with a slight glow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Project Card Headings */
 .project-card h3 {
-    color: #4CAF50; /* Dark Green */
+    color: white; /*Pink */
 }
 
 /* Accessibility Styles */
 a:focus {
-    outline: 2px dashed #66BB6A; /* Light Green outline for focus */
+    outline: 2px dashed #FFB7C5; /* Pink outline for focus */
 }

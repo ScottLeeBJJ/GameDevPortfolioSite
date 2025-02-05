@@ -1,6 +1,6 @@
 /* Navbar Styles */
 .navbar {
-    background-color: #4CAF50; /* Dark Green */
+    background-color: #F1A7C1; /* Cherry Blossom Pink */
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -9,18 +9,18 @@
 }
 
 .navbar-brand {
-    color: #121212; /* Dark text */
+    color: white; /* White text */
     text-decoration: none;
     font-size: 24px;
 }
 
 .nav-link {
-    color: #121212; /* Dark text */
+    color: white; /* Dark text */
     text-decoration: none;
     padding: 10px;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #66BB6A; /* Light Green hover effect */
+    color: black; /* Light Green hover effect */
 }
