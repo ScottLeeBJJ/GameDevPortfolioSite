@@ -1,0 +1,41 @@
+/* Typical site styles section */
+/* Media Queries for Responsiveness */
+
+/* Adjust navbar and font sizes for smaller screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align left */
+    }
+    
+    .nav-link {
+        padding: 8px 5px; /* Adjust padding */
+    }
+
+    .hero {
+        padding: 30px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .btn-primary {
+        width: 100%; /* Make button full-width on small screens */
+        display: inline-block; /* Ensure it's displayed as a block */
+    }
+}
+
+
+/* Game dev section */
+/* Adjust project cards for smaller screens */
+@media (max-width: 480px) {
+    #projects {
+        padding: 20px 5px;
+    }
+
+    .project-card {
+        flex: 1 1 100%; /* Full width for each card */
+        max-width: 100%;
+    }
+
+    .project-card h3 {
+        font-size: 1.2em; /* Slightly smaller heading for mobile */
+    }
+}
