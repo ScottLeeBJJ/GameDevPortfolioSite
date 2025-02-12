@@ -3,7 +3,7 @@
     text-align: center;
     padding: 50px 20px;
     background: linear-gradient(to bottom, #4CAF50, #388E3C); /* Gradient from Dark Green to a Deeper Green */
-    color: #E0E0E0; /* Light Gray */
+    color: #E0E0E0;
     position: relative; /* Position relative for overlay */
     min-height: 50vh; /* Minimum height to be half the viewport height */
     margin-bottom: 50px; /* Space below the hero section */
@@ -12,8 +12,8 @@
 /* Hero image styling */
 .hero-img {
     width: 100%; /* Make the hero image responsive */
-    height: 100%; /* Make sure the image fills the hero section */
-    position: absolute; /* Position absolute to fill the hero section */
+    height: 500px; /* Make sure the image fills the hero section */
+    position: relative; /* Position absolute to fill the hero section */
     top: 0;
     left: 0;
     z-index: 1; /* Ensure image is below overlay content */
@@ -24,5 +24,20 @@
 .hero-overlay {
     position: relative; /* Keep the overlay above the image */
     z-index: 2; /* Ensure overlay is above the image */
-    padding: 20px;
+}
+
+.hero-content {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: pink;
+    color: red;
+    width: 50%;
 }
