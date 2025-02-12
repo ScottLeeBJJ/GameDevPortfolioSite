@@ -27,17 +27,31 @@
 }
 
 .hero-content {
-    display: grid;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Switch to flexbox for simpler centering */
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 100vh; /* Full-screen height for perfect centering */
+    text-align: center;
 }
 
-.hero-content button {
+.hero-btn {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 10px; /* Add space between buttons */
+    justify-content: center; /* Center buttons horizontally */
+    margin-top: 20px; /* Add some space above the buttons */
+}
 
+.hero-btn button {
     background-color: pink;
     color: red;
-    width: 50%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero-btn button:hover {
+    background-color: lightcoral;
+    color: white;
 }
