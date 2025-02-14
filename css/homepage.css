@@ -1,3 +1,24 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;  /* This ensures the content layers correctly */
+}
+  
+ .background-image {
+    position: absolute;  /* Position it absolutely in relation to the body */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;  /* Puts the background image behind all other content */
+}
+  
+ .background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ensures the image covers the entire background area */
+}  
+
 /* Hero Section Styles */
 .hero {
     text-align: center;
@@ -18,6 +39,7 @@
     left: 0;
     z-index: 1; /* Ensure image is below overlay content */
     object-fit: cover; /* Cover the entire section */
+    box-shadow: 0 4px 8px #FFB7C5;
 }
 
 /* Overlay Styling */
@@ -31,12 +53,18 @@
     justify-content: center;  /* Space the images out evenly */
     align-items: center;/* Vertically center the images */
     gap: 10px;
+    padding-top: 50px;
 }
   
   .hero-images img {
     max-width: 30%;/* Make each image take up one-third of the width */
     height: 300px;
-    border: solid blue;
+    border: solid #D56C8B;
+}
+
+.hero-images img:hover {
+    transform: scale(1.3);  /* Inflate the image by 10% */
+    z-index: 1;  /* Ensure hovered image is above others */
 }
 
 .hero-content {
@@ -45,15 +73,23 @@
     justify-content: center; /* Center vertically */
     align-items: center; /* Center horizontally */
     text-align: center;
+
+    color: white;
 }
 
 .hero-content h1 {
     font-size: 40px;
+    background-color: #1E1E1E;
+    border: solid #D56C8B;
+    box-shadow: 0 4px 8px #FFB7C5;
 }
 
 .hero-content p {
     width: 50%;
     font-size: 25px;
+    background-color: #1E1E1E;
+    border: solid #D56C8B;
+    box-shadow: 0 4px 8px #FFB7C5;
 }
 
 .hero-btn {
@@ -61,18 +97,27 @@
     gap: 10px; /* Add space between buttons */
     justify-content: center; /* Center buttons horizontally */
     margin-top: 20px; /* Add some space above the buttons */
+    gap: 20px;
 }
 
 .hero-btn button {
-    background-color: pink;
-    color: red;
-    padding: 10px 20px;
+    background-color: #D56C8B;
+    color: white;
+    padding: 20px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 20px;
+
+    border: solid #D56C8B;
+    box-shadow: 0 4px 8px #FFB7C5;
 }
 
 .hero-btn button:hover {
-    background-color: lightcoral;
-    color: white;
+    background-color: pink;
+    color: #1E1E1E;
+}
+
+#contact-btn {
+    font-size: 40px;
 }

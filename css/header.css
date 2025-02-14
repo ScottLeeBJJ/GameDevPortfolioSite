@@ -7,7 +7,8 @@
     align-items: center;
     flex-wrap: wrap; /* Allows navbar items to wrap on smaller screens */
 
-    border-bottom: solid black;
+    border-bottom: solid #D56C8B;
+    box-shadow: 0 4px 8px #FFB7C5;
 }
 
 .navbar-brand {
@@ -24,5 +25,5 @@
 }
 
 .nav-link:hover {
-    color: black; /* Light Green hover effect */
+    color: #1E1E1E; /* Dark gray hover effect */
 }
