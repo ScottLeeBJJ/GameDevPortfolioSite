@@ -12,7 +12,7 @@
 /* Hero image styling */
 .hero-img {
     width: 100%; /* Make the hero image responsive */
-    height: 500px; /* Make sure the image fills the hero section */
+    height: 700px; /* Make sure the image fills the hero section */
     position: relative; /* Position absolute to fill the hero section */
     top: 0;
     left: 0;
@@ -26,13 +26,34 @@
     z-index: 2; /* Ensure overlay is above the image */
 }
 
+.hero-images {
+    display: flex;
+    justify-content: center;  /* Space the images out evenly */
+    align-items: center;/* Vertically center the images */
+    gap: 10px;
+}
+  
+  .hero-images img {
+    max-width: 30%;/* Make each image take up one-third of the width */
+    height: 300px;
+    border: solid blue;
+}
+
 .hero-content {
     display: flex; /* Switch to flexbox for simpler centering */
     flex-direction: column;
     justify-content: center; /* Center vertically */
     align-items: center; /* Center horizontally */
-    height: 100vh; /* Full-screen height for perfect centering */
     text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+}
+
+.hero-content p {
+    width: 50%;
+    font-size: 25px;
 }
 
 .hero-btn {

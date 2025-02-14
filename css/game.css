@@ -10,7 +10,7 @@
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap; /* Allow cards to wrap to the next line if needed */
-    gap: 20px; /* Space between project cards */
+    gap: 120px; /* Space between project cards */
     justify-content: center; /* Center the cards horizontally */
 }
 
