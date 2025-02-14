@@ -18,23 +18,12 @@ body {
     opacity: 0.8;
 }
 
-.falling-blossom:nth-child(1) {
-    animation-delay: 0s;
-    animation-duration: 12s;  /* Longer duration for slower fall */
-    left: 10%;  /* Randomize the start position horizontally */
-}
+.falling-blossom:nth-child(1) { animation-duration: 12s; animation-delay: 0s; transform: scale(0.8); left: 5%; }
+.falling-blossom:nth-child(2) { animation-duration: 10s; animation-delay: 2s; transform: scale(1.2); left: 20%; }
+.falling-blossom:nth-child(3) { animation-duration: 14s; animation-delay: 4s; transform: scale(0.6); left: 35%; }
+.falling-blossom:nth-child(4) { animation-duration: 9s; animation-delay: 1s; transform: scale(1.1); left: 50%; }
+.falling-blossom:nth-child(5) { animation-duration: 11s; animation-delay: 3s; transform: scale(0.9); left: 65%; }
 
-.falling-blossom:nth-child(2) {
-    animation-delay: 3s;
-    animation-duration: 8s;  /* Shorter duration for faster fall */
-    left: 20%;  /* Randomize the start position horizontally */
-}
-
-.falling-blossom:nth-child(3) {
-    animation-delay: 5s;
-    animation-duration: 10s;
-    left: 30%;  /* Randomize the start position horizontally */
-}
 
 /* Add more falling-blossoms as needed with similar random starting points */
 
@@ -44,7 +33,7 @@ body {
         transform: translateX(0) rotate(0deg);  /* No movement and no rotation at the start */
     }
     100% {
-        top: calc(100vh - 400px);  /* Stops 400px before the bottom of the viewport (to avoid footer overlap) */
+        top: calc(100vh - 470px);  /* Stops 470px before the bottom of the viewport (to avoid footer overlap) */
         transform: translateX(calc(200px * (1 - 2 * random()))) rotate(calc(360deg * random()));  /* Random horizontal movement and rotation */
     }
 }
