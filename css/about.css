@@ -5,7 +5,7 @@ body {
     overflow-x: hidden;
 }
   
-.background-image img{
+.background-image img {
     overflow: hidden;
     height: 100vh;
     z-index: -1;
@@ -36,7 +36,7 @@ body {
     left: 30%;  /* Randomize the start position horizontally */
 }
 
-/* Add more falling-blossoms as needed, with similar random starting points */
+/* Add more falling-blossoms as needed with similar random starting points */
 
 @keyframes fall {
     0% {
@@ -44,19 +44,16 @@ body {
         transform: translateX(0) rotate(0deg);  /* No movement and no rotation at the start */
     }
     100% {
-        top: 100vh;
+        top: calc(100vh - 400px);  /* Stops 400px before the bottom of the viewport (to avoid footer overlap) */
         transform: translateX(calc(200px * (1 - 2 * random()))) rotate(calc(360deg * random()));  /* Random horizontal movement and rotation */
     }
 }
 
-/* This adds a random function to the translateX and rotate values */
 @keyframes random {
     to {
-        transform: translateX(200px); /* Set an upper limit of horizontal movement */
+        transform: translateX(200px);  /* Set an upper limit of horizontal movement */
     }
 }
-
-
 
 
 /* About Section */

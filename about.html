@@ -52,5 +52,25 @@
     <p>&copy; 2024 Scott Lee. All rights reserved. | U.S. Army Veteran Owned</p>
   </footer>
 
+
+  <script>
+    const blossoms = document.querySelectorAll('.falling-blossom');
+    const footer = document.querySelector('footer');  // Assuming you have a footer element
+
+    function checkPosition() {
+        const footerTop = footer.getBoundingClientRect().top;
+
+        blossoms.forEach(blossom => {
+            const blossomBottom = blossom.getBoundingClientRect().bottom;
+
+            if (blossomBottom >= footerTop) {
+                blossom.style.animationPlayState = 'paused';  // Pause animation when reaching the footer
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkPosition);
+  </script>
+
 </body>
 </html>
