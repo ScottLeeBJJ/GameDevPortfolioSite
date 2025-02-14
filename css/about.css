@@ -1,5 +1,118 @@
 body {
-    background-color: blue;
-    color: white;
+    margin: 0;
+    padding: 0;
+    position: relative;  /* This ensures the content layers correctly */
+    overflow-x: hidden;
+}
+  
+.background-image img{
+    overflow: hidden;
+    height: 100vh;
+    z-index: -1;
 }
 
+.falling-blossom {
+    position: absolute;
+    top: -100px;
+    animation: fall 10s linear infinite;
+    opacity: 0.8;
+}
+
+.falling-blossom:nth-child(1) {
+    animation-delay: 0s;
+    animation-duration: 12s;  /* Longer duration for slower fall */
+    left: 10%;  /* Randomize the start position horizontally */
+}
+
+.falling-blossom:nth-child(2) {
+    animation-delay: 3s;
+    animation-duration: 8s;  /* Shorter duration for faster fall */
+    left: 20%;  /* Randomize the start position horizontally */
+}
+
+.falling-blossom:nth-child(3) {
+    animation-delay: 5s;
+    animation-duration: 10s;
+    left: 30%;  /* Randomize the start position horizontally */
+}
+
+/* Add more falling-blossoms as needed, with similar random starting points */
+
+@keyframes fall {
+    0% {
+        top: -100px;
+        transform: translateX(0) rotate(0deg);  /* No movement and no rotation at the start */
+    }
+    100% {
+        top: 100vh;
+        transform: translateX(calc(200px * (1 - 2 * random()))) rotate(calc(360deg * random()));  /* Random horizontal movement and rotation */
+    }
+}
+
+/* This adds a random function to the translateX and rotate values */
+@keyframes random {
+    to {
+        transform: translateX(200px); /* Set an upper limit of horizontal movement */
+    }
+}
+
+
+
+
+/* About Section */
+#about {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+
+    text-align: center;
+    padding: 40px 20px;
+    color: #E0E0E0;
+    position: relative;
+    min-height: 60vh;
+}
+
+.about-image {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    margin-top: 20px; /* Space above the image */
+}
+
+#about img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: solid #D56C8B;
+    box-shadow: 0 4px 8px #FFB7C5;
+    margin: 0 auto; /* Ensures the image is horizontally centered */
+    display: block; /* Removes any default inline-block behavior */
+}
+
+/* About Section Content */
+#about h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.1rem;
+    color: white;
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.6;
+    background-color: #1e1e1e;
+    border: solid #D56C8B;
+    box-shadow: 0 4px 8px #FFB7C5;
+}
+
+.skillset {
+    font-size: 25px;
+    background-color: #1E1E1E;
+    border: solid #D56C8B;
+    box-shadow: 0 4px 8px #FFB7C5;
+}
