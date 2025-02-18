@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Scott Lee</title>
-    <link rel="stylesheet" href="css/styles.css"> <!-- Updated href for main styles -->
-    <link rel="stylesheet" href="css/contact-styles.css"> <!-- Link for contact form styles -->
-    <link rel="stylesheet" href="css/header.css"> <!-- Link for contact form styles -->
-    <link rel="stylesheet" href="css/footer.css"> <!-- Link for contact form styles -->
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contact-styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
 
@@ -23,75 +23,89 @@
     </div>
   </nav>
 
-    <!-- Contact Form Section -->
+  <!-- Contact Form Section -->
+  <div class="contact-form-section">
     <section id="contact">
         <h2>Contact Me</h2>
         <form id="contact-form" method="POST" action="contact.php">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="1234567890">
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Your Name">
+            </div>
+  
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="1234567890">
+            </div>
+  
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com">
+            </div>
+  
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
+            </div>
+  
             <!-- CAPTCHA Section -->
-            <div class="captcha">
+            <div class="form-group captcha">
                 <label id="captcha-question" for="captcha"></label>
-                <input type="text" id="captcha" name="captcha" required>
+                <input type="text" id="captcha" name="captcha" required placeholder="Solve the CAPTCHA">
                 <input type="hidden" id="captcha-answer" name="captcha-answer">
             </div>
-
-            <button type="submit">Send Message</button>
+  
+            <div class="submit-btn">
+                <button type="submit">Send Message</button>
+            </div>
         </form>
         <div id="response-message"></div>
-    </section>
+    </section>  
+  </div>
+  <!-- Footer -->
+  <footer>
+      <p>&copy; 2024 Scott Lee. All rights reserved. | U.S. Army Veteran Owned</p>
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Scott Lee. All rights reserved. | U.S. Army Veteran Owned</p>
-    </footer>
+  <script>
+  // Function to generate a random CAPTCHA question
+  function generateCaptcha() {
+      const num1 = Math.floor(Math.random() * 10);
+      const num2 = Math.floor(Math.random() * 10);
+      const operator = Math.random() < 0.5 ? '+' : '-';
+      const question = `${num1} ${operator} ${num2}`;
+      
+      document.getElementById('captcha-question').innerText = `Solve: ${question}`;
+      document.getElementById('captcha-answer').value = eval(question);
+  }
 
-    <script>
-    // Function to generate a random CAPTCHA question
-    function generateCaptcha() {
-        const num1 = Math.floor(Math.random() * 10);
-        const num2 = Math.floor(Math.random() * 10);
-        const operator = Math.random() < 0.5 ? '+' : '-';
-        const question = `${num1} ${operator} ${num2}`;
-        
-        document.getElementById('captcha-question').innerText = `What is ${question}?`;
-        document.getElementById('captcha-answer').value = eval(question); // Evaluate the expression to get the answer
-    }
+  // Call the function to generate the CAPTCHA on page load
+  window.onload = generateCaptcha;
 
-    // Call the function to generate the CAPTCHA on page load
-    window.onload = generateCaptcha;
+  document.getElementById("contact-form").onsubmit = function(event) {
+      event.preventDefault(); // Prevent the default form submission
 
-    document.getElementById("contact-form").onsubmit = function(event) {
-        event.preventDefault(); // Prevent the default form submission
+      var formData = new FormData(this);
+      
+      // Validate CAPTCHA before sending request
+      if (formData.get("captcha") !== formData.get("captcha-answer")) {
+          document.getElementById("response-message").innerText = "Incorrect CAPTCHA. Please try again.";
+          return;
+      }
 
-        // Create a FormData object
-        var formData = new FormData(this);
-
-        // Send the data using fetch API
-        fetch('contact.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            // Show success or error message
-            document.getElementById("response-message").innerText = data === "success" ? "Message sent!" : (data === "invalid captcha" ? "Please answer the CAPTCHA correctly." : "Error sending message.");
-        })
-        .catch(error => {
-            document.getElementById("response-message").innerText = "Error sending message.";
-        });
-    };
-    </script>
+      fetch('contact.php', {
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById("response-message").innerText = data === "success" ? "Message sent!" : "Error sending message.";
+      })
+      .catch(() => {
+          document.getElementById("response-message").innerText = "Error sending message.";
+      });
+  };
+  </script>
 
 </body>
 </html>
