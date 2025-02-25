@@ -24,45 +24,70 @@
   </nav>
 
   <!-- Contact Form Section -->
-  <div class="contact-form-section">
+<!-- Contact Form Section -->
+<div class="contact-form-section">
     <section id="contact">
-        <h1>Contact Page Will Function Soon!</h1>
         <h2>Contact Me</h2>
-        <form id="contact-form" method="POST" action="contact.php">
+        
+        <form id="contact-form" action="https://formspree.io/f/xjkgqlvn" method="POST">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required placeholder="Your Name">
             </div>
-  
+
             <div class="form-group">
                 <label for="phone">Phone Number:</label>
                 <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="1234567890">
             </div>
-  
+
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required placeholder="you@example.com">
             </div>
-  
+
             <div class="form-group">
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
             </div>
-  
-            <!-- CAPTCHA Section -->
-            <div class="form-group captcha">
-                <label id="captcha-question" for="captcha"></label>
-                <input type="text" id="captcha" name="captcha" required placeholder="Solve the CAPTCHA">
-                <input type="hidden" id="captcha-answer" name="captcha-answer">
-            </div>
-  
+
             <div class="submit-btn">
                 <button type="submit">Send Message</button>
             </div>
         </form>
+
         <div id="response-message"></div>
     </section>  
-  </div>
+</div>
+
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const formData = new FormData(this);
+
+        fetch('https://formspree.io/f/xjkgqlvn', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            console.log('Form submission response:', response);  // Log response for debugging
+            
+            // Check if the response status is OK (200–299)
+            if (response.ok) {
+                document.getElementById('response-message').innerHTML = 'Thank you! Your message has been sent.';
+                document.getElementById('contact-form').reset(); // Reset the form
+            } else {
+                document.getElementById('response-message').innerHTML = 'Oops! Something went wrong. Please try again.';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);  // Log any errors to the console
+            document.getElementById('response-message').innerHTML = 'Oops! Something went wrong. Please try again.';
+        });
+    });
+</script>
+
+
   <!-- Footer -->
   <footer>
       <p>&copy; 2024 Scott Lee. All rights reserved. | U.S. Army Veteran Owned</p>

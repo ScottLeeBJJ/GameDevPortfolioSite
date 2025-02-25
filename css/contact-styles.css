@@ -4,6 +4,7 @@ body {
     line-height: 1.6;
     background: #1e1e1e;
     margin: 0;
+    color: #ddd; /* Ensure text is visible on dark background */
 }
 
 /* Center Form */
@@ -18,9 +19,9 @@ body {
 /* Contact Form Container */
 #contact {
     max-width: 500px;
-    width: 90%;
+    width: 100%;
     padding: 25px;
-    background: #2a2a2a;
+    background: #1e1e1e;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
@@ -68,4 +69,23 @@ input:focus, textarea:focus {
 
 /* Textarea */
 textarea {
-    min-height:
+    min-height: 120px; /* Ensure enough space for textarea content */
+    resize: vertical; /* Allow resizing of the textarea vertically */
+}
+
+/* Submit Button */
+button {
+    background-color: #00bcd4;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #008c9e;
+}
