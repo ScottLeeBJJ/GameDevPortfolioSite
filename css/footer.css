@@ -9,3 +9,20 @@ footer {
     border-top: solid blue;
     box-shadow: 0 4px 8px #FFB7C5;
 }
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #00bcd4; /* Change color on hover */
+}
