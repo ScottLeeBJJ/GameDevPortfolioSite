@@ -118,6 +118,44 @@ body {
     color: #1E1E1E;
 }
 
+.github-contributions {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center everything inside */
+    background-color: #1E1E1E;
+    margin: 20px auto; /* Centers horizontally */
+    padding: 10px;
+    border-radius: 8px;
+    width: fit-content; /* Keeps it from stretching */
+    text-align: center;
+}
+
+.github-contributions button {
+    width: 50%;
+    background-color: #D56C8B;
+    color: white;
+    border: solid 2px #D56C8B;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(255, 183, 197, 0.6);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.github-contributions button:hover {
+    background-color: #C25576;
+    box-shadow: 0 6px 12px rgba(255, 183, 197, 0.8);
+}
+
+.github-contributions img {
+    background-color: #1E1E1E;
+    max-width: 100%; /* Ensures responsiveness */
+    height: auto;
+    border-radius: 5px; /* Optional: Slight rounded corners */
+}
+
+
 #contact-btn {
     font-size: 40px;
 }
