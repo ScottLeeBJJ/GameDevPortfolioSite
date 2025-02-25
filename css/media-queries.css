@@ -1,177 +1,143 @@
-/* Base Styles (For Desktop) */
-body {
-    font-size: 18px;
-    line-height: 1.6;
+/* 🔹 Large Tablets and Small Laptops (Below 1024px) */
+@media screen and (max-width: 1024px) {
+  #projects {
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 30px;
   }
-  
-  /* 🔹 Tablets (768px and below) */
-  @media screen and (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .nav-link {
-      display: block;
-      padding: 10px;
-    }
-  
-    .about-image {
-      width: 80%;
-      height: auto;
-    }
-  
-    .skillset ul {
-      padding-left: 10px;
-    }
-  
-    footer {
-      text-align: center;
-    }
-  }
-  
-  /* 🔹 Mobile Phones (480px and below) */
-  @media screen and (max-width: 480px) {
-    body {
-      font-size: 16px; /* Slightly smaller for readability */
-      padding: 0 10px;
-    }
-  
-    .navbar-brand {
-      font-size: 1.5rem;
-    }
-  
-    .nav-link {
-      font-size: 16px;
-      padding: 8px;
-    }
-  
-    h2 {
-      font-size: 1.4rem;
-    }
-  
-    .about-image {
-      width: 90%;
-      height: auto;
-    }
-  
-    .skillset ul {
-      font-size: 14px;
-    }
-  
-    footer p {
-      font-size: 14px;
-    }
+}
+
+/* 🔹 Tablets (Below 768px) */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
   }
 
-/* 🔹 Tablets */
-@media screen and (max-width: 768px) {
-    .hero {
-      text-align: center;
-      padding: 40px;
-    }
-  
-    .hero img {
-      width: 80%;
-      height: auto;
-    }
-  
-    .hero h1 {
-      font-size: 2rem;
-    }
-  }
-  
-  /* 🔹 Mobile */
-  @media screen and (max-width: 480px) {
-    .hero h1 {
-      font-size: 1.5rem;
-    }
-  
-    .hero p {
-      font-size: 16px;
-    }
-  
-    .hero img {
-      width: 100%;
-    }
+  .nav-link {
+    display: block;
+    padding: 10px;
   }
 
-/* 🔹 Tablets */
-@media screen and (max-width: 768px) {
-    .project-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .project-card {
-      width: 90%;
-      margin-bottom: 20px;
-    }
-  }
-  
-  /* 🔹 Mobile */
-  @media screen and (max-width: 480px) {
-    .project-card h3 {
-      font-size: 1.2rem;
-    }
-  
-    .project-card p {
-      font-size: 14px;
-    }
+  .hero {
+    text-align: center;
+    padding: 40px;
   }
 
-/* 🔹 Tablets */
-@media screen and (max-width: 768px) {
-    .about-container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .about-image {
-      width: 75%;
-    }
-  
-    .skillset ul {
-      padding-left: 15px;
-    }
-  }
-  
-  /* 🔹 Mobile */
-  @media screen and (max-width: 480px) {
-    .about-image {
-      width: 90%;
-    }
-  
-    .skillset h2 {
-      font-size: 1.3rem;
-    }
-  
-    .skillset ul {
-      font-size: 14px;
-    }
+  .hero img {
+    width: 80%;
+    height: auto;
   }
 
-  /* 🔹 Tablets */
-@media screen and (max-width: 768px) {
-    .contact-form {
-      width: 90%;
-    }
-  
-    .contact-form label {
-      font-size: 16px;
-    }
+  .hero h1 {
+    font-size: 2rem;
   }
-  
-  /* 🔹 Mobile */
-  @media screen and (max-width: 480px) {
-    .contact-form input,
-    .contact-form textarea {
-      font-size: 14px;
-    }
-  
-    .contact-form button {
-      font-size: 16px;
-      padding: 10px;
-    }
+
+  .about-container,
+  .project-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-  
+
+  .about-image {
+    width: 75%;
+  }
+
+  .skillset ul {
+    padding-left: 15px;
+  }
+
+  .contact-form {
+    width: 90%;
+  }
+
+  .contact-form label {
+    font-size: 16px;
+  }
+
+  #projects {
+    grid-template-columns: repeat(1, 1fr); /* Stack projects in one column */
+    gap: 20px;
+  }
+
+  .project-card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+
+/* 🔹 Mobile Phones (Below 480px) */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero img {
+    width: 100%;
+  }
+
+  .about-image {
+    width: 90%;
+  }
+
+  .skillset h2 {
+    font-size: 1.3rem;
+  }
+
+  .skillset ul {
+    font-size: 14px;
+  }
+
+  .project-card {
+    padding: 15px;
+  }
+
+  .project-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-card p {
+    font-size: 14px;
+  }
+
+  .project-card img {
+    height: 180px; /* Slightly smaller images */
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+  }
+
+  .contact-form button {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  footer p {
+    font-size: 14px;
+    text-align: center;
+  }
+}

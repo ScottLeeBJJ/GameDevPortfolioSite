@@ -1,114 +1,93 @@
 /* General Styles */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: black;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  h1, h2, h3 {
-    color: white;
-  }
-  
-  .section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin: 40px 0 20px;
-    color: white;
-  }
-  
-  p {
-    line-height: 1.6;
-  }
-  
-  /* Navbar Styles */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1d3557;
-    color: #fff;
-
-    border-bottom: solid blue;
-    box-shadow: 0 4px 8px purple;
-  }
-  
-  .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .nav-link {
-    color: #f1faee;
-    margin-left: 20px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    color: #a8dadc;
-  }
-  
-  /* Projects Section */
-
-.title-projects {
-    text-align: center;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
+h1, h2, h3 {
+  color: white;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 40px 0 20px;
+  color: white;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.title-projects {
+  text-align: center; /* Centers the text inside */
+  width: 100%; /* Ensures it takes the full width */
+  margin: 0 auto; /* Centers it horizontally */
+  padding: 20px 0; /* Adds some spacing */
+}
+
+/* Game Projects Section Styles */
+.gptitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  margin-top: 20px;
+}
+
+/* Projects Section */
 #projects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-    gap: 20px; /* Space between cards */
-    justify-items: center; /* Center the cards in each column */
-    align-items: center; /* Align items vertically */
-    width: 100%; /* Ensure container takes up the full width */
+  width: 90%; /* Make sure the grid takes up most of the page */
+  margin: 40px auto; /* Center the section */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 40px; /* Space between project cards */
+  justify-content: center; /* Center the cards horizontally */
+  max-width: 1400px; /* Limit maximum width */
 }
 
 .project-card {
-    background-color: #1E1E1E;
-    color: white;
-    border: 2px solid blue;
-    border-radius: 10px;
-    padding: 50px;
-    box-shadow: 0 4px 8px purple;
-    transition: transform 0.3s ease;
-    max-width: 75%;
-}
-
-.project-card a {
-    color: lightblue;
+  background-color: #1E1E1E;
+  border: 2px solid #FFB7C5;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px #FFB7C5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
 .project-card:hover {
-    transform: scale(1.2);
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px #FFB7C5, 0 0 20px #F1A7C1;
 }
 
 .project-card img {
-    width: 100%;
-    height: 50%; /* Set a fixed height for consistency */
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px #FFB7C5, 0 0 15px #F1A7C1;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  height: 200px; /* Set a fixed height for consistency */
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #FFB7C5, 0 0 15px #F1A7C1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-  
-  /* Footer Styles */
-  footer {
-    background-color: #1d3557;
-    color: #f1faee;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .projects-grid {
-      grid-template-columns: 1fr; /* Stack cards on small screens */
-    }
-  }
-  
 
-  
+/* Project Card Headings */
+.project-card h3 {
+  color: #FFB7C5; /* Pink color */
+  margin-top: 10px;
+  font-size: 1.5em;
+}
+
+.project-card a {
+  color: pink;
+}
+
+/* Accessibility Styles */
+a:focus {
+  outline: 2px dashed #FFB7C5;
+}
