@@ -1,41 +1,177 @@
-/* Typical site styles section */
-/* Media Queries for Responsiveness */
-
-/* Adjust navbar and font sizes for smaller screens */
-@media (max-width: 768px) {
+/* Base Styles (For Desktop) */
+body {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  /* 🔹 Tablets (768px and below) */
+  @media screen and (max-width: 768px) {
     .navbar {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align left */
+      flex-direction: column;
+      text-align: center;
     }
-    
+  
     .nav-link {
-        padding: 8px 5px; /* Adjust padding */
+      display: block;
+      padding: 10px;
     }
+  
+    .about-image {
+      width: 80%;
+      height: auto;
+    }
+  
+    .skillset ul {
+      padding-left: 10px;
+    }
+  
+    footer {
+      text-align: center;
+    }
+  }
+  
+  /* 🔹 Mobile Phones (480px and below) */
+  @media screen and (max-width: 480px) {
+    body {
+      font-size: 16px; /* Slightly smaller for readability */
+      padding: 0 10px;
+    }
+  
+    .navbar-brand {
+      font-size: 1.5rem;
+    }
+  
+    .nav-link {
+      font-size: 16px;
+      padding: 8px;
+    }
+  
+    h2 {
+      font-size: 1.4rem;
+    }
+  
+    .about-image {
+      width: 90%;
+      height: auto;
+    }
+  
+    .skillset ul {
+      font-size: 14px;
+    }
+  
+    footer p {
+      font-size: 14px;
+    }
+  }
 
+/* 🔹 Tablets */
+@media screen and (max-width: 768px) {
     .hero {
-        padding: 30px 10px; /* Adjust padding for smaller screens */
+      text-align: center;
+      padding: 40px;
     }
-
-    .btn-primary {
-        width: 100%; /* Make button full-width on small screens */
-        display: inline-block; /* Ensure it's displayed as a block */
+  
+    .hero img {
+      width: 80%;
+      height: auto;
     }
-}
-
-
-/* Game dev section */
-/* Adjust project cards for smaller screens */
-@media (max-width: 480px) {
-    #projects {
-        padding: 20px 5px;
+  
+    .hero h1 {
+      font-size: 2rem;
     }
+  }
+  
+  /* 🔹 Mobile */
+  @media screen and (max-width: 480px) {
+    .hero h1 {
+      font-size: 1.5rem;
+    }
+  
+    .hero p {
+      font-size: 16px;
+    }
+  
+    .hero img {
+      width: 100%;
+    }
+  }
 
+/* 🔹 Tablets */
+@media screen and (max-width: 768px) {
+    .project-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
     .project-card {
-        flex: 1 1 100%; /* Full width for each card */
-        max-width: 100%;
+      width: 90%;
+      margin-bottom: 20px;
     }
-
+  }
+  
+  /* 🔹 Mobile */
+  @media screen and (max-width: 480px) {
     .project-card h3 {
-        font-size: 1.2em; /* Slightly smaller heading for mobile */
+      font-size: 1.2rem;
     }
-}
+  
+    .project-card p {
+      font-size: 14px;
+    }
+  }
+
+/* 🔹 Tablets */
+@media screen and (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-image {
+      width: 75%;
+    }
+  
+    .skillset ul {
+      padding-left: 15px;
+    }
+  }
+  
+  /* 🔹 Mobile */
+  @media screen and (max-width: 480px) {
+    .about-image {
+      width: 90%;
+    }
+  
+    .skillset h2 {
+      font-size: 1.3rem;
+    }
+  
+    .skillset ul {
+      font-size: 14px;
+    }
+  }
+
+  /* 🔹 Tablets */
+@media screen and (max-width: 768px) {
+    .contact-form {
+      width: 90%;
+    }
+  
+    .contact-form label {
+      font-size: 16px;
+    }
+  }
+  
+  /* 🔹 Mobile */
+  @media screen and (max-width: 480px) {
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 14px;
+    }
+  
+    .contact-form button {
+      font-size: 16px;
+      padding: 10px;
+    }
+  }
+  

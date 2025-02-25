@@ -4,58 +4,103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me</title>
-  <link rel="stylesheet" href="css/styles.css"> <!-- Updated href -->
-  <link rel="stylesheet" href="css/header.css"> <!-- Updated href -->
-  <link rel="stylesheet" href="css/footer.css"> <!-- Updated href -->
-  <link rel="stylesheet" href="css/about.css"> <!-- Updated href -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
+
   <!-- Background Image -->
-  <div class="background-image">
-    <img src="images/cherryblossoms.png" alt="Falling cherry blossoms" class="falling-blossom">
-    <img src="images/cherryblossoms.png" alt="Falling cherry blossoms" class="falling-blossom">
-    <img src="images/cherryblossoms.png" alt="Falling cherry blossoms" class="falling-blossom">
-    <img src="images/cherryblossoms.png" alt="Falling cherry blossoms" class="falling-blossom">
+  <div class="background-image" aria-hidden="true">
+    <img src="images/cherryblossoms.png" alt="" class="falling-blossom">
+    <img src="images/cherryblossoms.png" alt="" class="falling-blossom">
+    <img src="images/cherryblossoms.png" alt="" class="falling-blossom">
+    <img src="images/cherryblossoms.png" alt="" class="falling-blossom">
   </div>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <h1 class="navbar-brand">Scott Lee - Software/Game Programmer</h1>
-    <div>
+  <!-- Header and Navigation -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+      <h1 class="navbar-brand">Scott Lee - Software/Game Programmer</h1>
+      <div>
         <a href="index.html" class="nav-link">Homepage</a>
         <a href="game-projects.html" class="nav-link">Game Projects</a>
         <a href="web-projects.html" class="nav-link">Web Projects</a>
-        <a href="about.html" class="nav-link">About</a>
+        <a href="about.html" class="nav-link" aria-current="page">About</a>
         <a href="contact.html" class="nav-link">Contact</a>
-    </div>
-  </nav>
-
-  <!-- About Section -->
-  <section id="about">
-    <h2>Scott Lee</h2>
-    <img src="/images/aboutme.png" class="about-image" alt="A smiling man wearing a black jiu-jitsu gi and a blue belt poses with a medal around his neck, giving a double shaka hand gesture in front of a competition backdrop.">
-    <p>*Silver Medal, Grappling Industries, 2022*</p>
-    <p>Hi, I’m Scott Lee, a Game Programmer, Web Developer, and Jiu-Jitsu enthusiast with a passion for creating immersive experiences and building modern, user-friendly websites. Much like in Jiu-Jitsu, where strategy, focus, and precision are key, I apply these same principles to my work in both game development and web design. With over 6 years of experience, I’ve honed my skills in Unreal Engine 5 (C++ and Blueprints), WordPress development, and UI/UX design, developing projects that engage users and solve real-world problems.
-        I’m currently pursuing a second bachelor’s degree in Computer Science to expand my technical expertise, focusing on algorithms, software development, and system architecture—skills I apply to both optimizing web pages for SEO and performance and developing complex gameplay mechanics for 3D fantasy games. Whether it’s crafting gameplay features that deliver a thrilling experience or optimizing a business website to increase conversions and accessibility, my approach is rooted in problem-solving and creativity. If you’re looking for someone who combines technical know-how with the determination and mindset to tackle challenges head-on, I’m the candidate you want on your team.</p>
-    
-    <div class="skillset">
-      <h2>My Skillset</h2>
-      <ul>Game Development: Unreal Engine 5, C++, Blueprints, Multiplayer Systems, Game Optimization</ul>
-      <ul>WordPress and Shopify among other CMS sites, Custom Websites, Mobile Responsiveness, SEO, ADA Compliance</ul>
-      <ul>Tools & Technologies: Git, Google Analytics, Visual Studio, Figma</ul>
       </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="about">
+    <h2>About Scott Lee</h2>
+
+    <figure>
+      <img src="/images/aboutme.png" class="about-image" alt="Scott Lee, a man in a black jiu-jitsu gi with a blue belt, smiling and showing a double shaka hand gesture while wearing a silver medal in front of a competition backdrop.">
+      <figcaption>Silver Medal, Grappling Industries, 2022</figcaption>
+    </figure>
+
+
+<!-- Skillset Section -->
+<section class="skillset">
+  <h2>My Skillset</h2>            
+  <div class="skill-category">
+      <h3>Game Development</h3>
+      <ul>
+          <li>Proficient in <span class="highlight">Unreal Engine 5</span> with both <span class="highlight">C++</span> and <span class="highlight">Blueprints</span>.</li>
+          <li>Experienced in <span class="highlight">Unity</span> with <span class="highlight">C#</span>.</li>
+          <li>Strong background in <span class="highlight">multiplayer game development</span>.</li>
+          <li>Experienced in <span class="highlight">FiveM server development</span>.</li>
+      </ul>
+  </div>
+
+  <div class="skill-category">
+      <h3>Web Development</h3>
+      <ul>
+          <li>Skilled in building responsive websites using <span class="highlight">HTML</span>, <span class="highlight">CSS</span>, <span class="highlight">JavaScript</span>, and <span class="highlight">React</span>.</li>
+          <li>Experienced with <span class="highlight">PHP</span> for backend development.</li>
+          <li>Proficient in <span class="highlight">Shopify</span>, <span class="highlight">Wix</span>, <span class="highlight">WordPress</span>, and other CMS platforms.</li>
+      </ul>
+  </div>
+
+  <div class="skill-category">
+      <h3>Hosting & Version Control</h3>
+      <ul>
+          <li>Comfortable hosting websites on platforms like <span class="highlight">GoDaddy</span>, <span class="highlight">Blue Hosting</span>, and <span class="highlight">GitHub Pages</span>.</li>
+          <li>Proficient in <span class="highlight">Git</span>, with strong version control practices for collaborative workflows.</li>
+      </ul>
+  </div>
+
+  <div class="skill-category">
+      <h3>Other Skills</h3>
+      <ul>
+          <li>Experience with <span class="highlight">ADA compliance</span> for websites, ensuring accessibility and inclusivity.</li>
+          <li>A problem-solver with a strong understanding of <span class="highlight">UI/UX design</span> in both game development and web environments.</li>
+      </ul>
+  </div>
+</section>
+
+    <p>Hi, I’m Scott Lee, a Game Programmer, Web Developer, and Jiu-Jitsu enthusiast with a passion for creating immersive experiences and building modern, user-friendly websites. Much like in Jiu-Jitsu, where strategy, focus, and precision are key, I apply these same principles to my work in both game development and web design.</p>
+
+    <p>With over 6 years of experience, I’ve honed my skills in Unreal Engine 5 (C++ and Blueprints), WordPress development, and UI/UX design, developing projects that engage users and solve real-world problems.</p>
+
+    <p>I’m currently pursuing a second bachelor’s degree in Computer Science to expand my technical expertise, focusing on algorithms, software development, and system architecture—skills I apply to both optimizing web pages for SEO and performance and developing complex gameplay mechanics for 3D fantasy games.</p>
+
+    <p>Whether it’s crafting gameplay features that deliver a thrilling experience or optimizing a business website to increase conversions and accessibility, my approach is rooted in problem-solving and creativity. If you’re looking for someone who combines technical know-how with the determination and mindset to tackle challenges head-on, I’m the candidate you want on your team.</p>
+
     <p>Beyond coding, I’m also a Jiu-Jitsu enthusiast and have a deep love for fantasy and Japanese culture, which often inspires my creative projects. I thrive in collaborative environments and enjoy working on projects that challenge me to think outside the box. If you’d like to collaborate or learn more about my work, feel free to reach out!</p>
-  </section>
+  </main>
 
   <!-- Footer -->
-  <footer>
+  <footer role="contentinfo">
     <p>&copy; 2024 Scott Lee. All rights reserved. | U.S. Army Veteran Owned</p>
   </footer>
 
-
   <script>
     const blossoms = document.querySelectorAll('.falling-blossom');
-    const footer = document.querySelector('footer');  // Assuming you have a footer element
+    const footer = document.querySelector('footer');
 
     function checkPosition() {
         const footerTop = footer.getBoundingClientRect().top;
@@ -64,7 +109,7 @@
             const blossomBottom = blossom.getBoundingClientRect().bottom;
 
             if (blossomBottom >= footerTop) {
-                blossom.style.animationPlayState = 'paused';  // Pause animation when reaching the footer
+                blossom.style.animationPlayState = 'paused';
             }
         });
     }
