@@ -101,4 +101,9 @@ body {
     background-color: #1E1E1E;
     border: solid #D56C8B;
     box-shadow: 0 4px 8px #FFB7C5;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
 }
+
