@@ -1,29 +1,63 @@
 /* Navbar Styles */
 .navbar {
-    background-color: #D56C8B; /* Cherry Blossom Pink */
-    padding: 10px 20px;
+    background-color: #D56C8B; /* Deeper Cherry Blossom Pink */
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allows navbar items to wrap on smaller screens */
-
-    border-bottom: solid #D56C8B;
-    box-shadow: 0 4px 8px #FFB7C5;
+    flex-wrap: wrap;
+    border-bottom: 3px solid #C14F6C; /* Slightly darker border for subtle contrast */
+    box-shadow: 0 4px 8px rgba(255, 183, 197, 0.6); /* Soft pink shadow */
+    border-radius: 8px; /* Rounded corners for a soft, floral feel */
+    backdrop-filter: blur(5px); /* Optional: adds a frosted glass effect */
 }
 
 .navbar-brand {
-    color: white; /* White text */
+    color: white; /* White text for contrast */
     text-decoration: none;
-    font-size: 24px;
+    font-size: 28px; /* Larger text for emphasis */
+    font-family: 'Roboto', sans-serif; /* Elegant and clean font choice */
+    font-weight: 700; /* Bold to stand out */
+    letter-spacing: 1px; /* Slight spacing for a more refined look */
 }
 
 .nav-link {
-    color: white; /* Dark text */
+    color: white; /* White text for links */
     text-decoration: none;
-    padding: 10px;
-    transition: color 0.3s ease;
+    padding: 10px 15px;
+    margin: 0 10px;
+    font-family: 'Poppins', sans-serif; /* Rounded and playful font */
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover transition */
 }
 
 .nav-link:hover {
-    color: #1E1E1E; /* Dark gray hover effect */
+    color: #FFB7C5; /* Soft light pink hover effect */
+    transform: translateY(-3px); /* Slightly lift on hover */
+}
+
+.navbar .nav-link:active {
+    color: #FFB7C5; /* Light pink on click */
+}
+
+/* Add cherry blossom themed background elements (Optional) */
+.navbar::before {
+    content: "🌸";
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
