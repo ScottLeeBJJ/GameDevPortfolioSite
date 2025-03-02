@@ -7,85 +7,78 @@ body {
     color: #ddd; /* Ensure text is visible on dark background */
 }
 
-/* Center Form */
+/* Contact form section */
 .contact-form-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Ensures vertical centering */
-    padding: 20px;
-}
-
-/* Contact Form Container */
-#contact {
-    max-width: 500px;
     width: 100%;
-    padding: 25px;
-    background: #1e1e1e;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
-}
-
-/* Form Heading */
-#contact h2 {
-    color: #ffffff;
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-/* Form Group */
-.form-group {
-    margin-bottom: 18px;
-    text-align: left;
-}
-
-/* Labels */
-label {
-    display: block;
-    font-size: 14px;
-    color: #bbb;
-    margin-bottom: 5px;
-}
-
-/* Input & Textarea Styling */
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #444;
+    max-width: 600px;
+    margin: 2rem auto;
+    background-color: #1e1e1e;
+    padding: 2rem;
     border-radius: 8px;
-    font-size: 16px;
-    background: #1e1e1e;
-    color: white;
-    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 10px 10px 10px 10px black;
 }
 
-/* Add a glow effect on focus */
-input:focus, textarea:focus {
-    border-color: #00bcd4;
-    box-shadow: 0 0 8px rgba(0, 188, 212, 0.6);
+section#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Form group styles */
+.form-group {
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007BFF;
     outline: none;
 }
 
-/* Textarea */
-textarea {
-    min-height: 120px; /* Ensure enough space for textarea content */
-    resize: vertical; /* Allow resizing of the textarea vertically */
+/* Button styling */
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
-/* Submit Button */
-button {
-    background-color: #00bcd4;
+.submit-btn button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    background-color: black;
     color: white;
-    padding: 12px 24px;
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-/* Button Hover Effect */
-button:hover {
-    background-color: #008c9e;
+.submit-btn button:hover {
+    background-color: red;
+}
+
+/* Response message styling */
+#response-message {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #333;
 }

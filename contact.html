@@ -57,41 +57,9 @@
                 <button type="submit">Send Message</button>
             </div>
         </form>
-
-        <div class="disclaimer">FORM MAY SHOW ERROR MESSAGE BUT WILL SUBMIT, IF YOU DON'T HEAR FROM ME IN 24 HOURS PLEASE TRY AGAIN. THANK YOU!</div>
-
         <div id="response-message"></div>
     </section>  
 </div>
-
-<script>
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
-
-        const formData = new FormData(this);
-
-        fetch('https://formspree.io/f/xjkgqlvn', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            console.log('Form submission response:', response);  // Log response for debugging
-            
-            // Check if the response status is OK (200–299)
-            if (response.ok) {
-                document.getElementById('response-message').innerHTML = 'Thank you! Your message has been sent.';
-                document.getElementById('contact-form').reset(); // Reset the form
-            } else {
-                document.getElementById('response-message').innerHTML = 'Oops! Something went wrong. Please try again.';
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);  // Log any errors to the console
-            document.getElementById('response-message').innerHTML = 'Oops! Something went wrong. Please try again.';
-        });
-    });
-</script>
-
 
   <!-- Footer -->
   <footer>
@@ -109,47 +77,6 @@
 
     <p>&copy; 2024 Scott Lee. All rights reserved. | U.S. Army Veteran Owned</p>
   </footer>
-
-
-  <script>
-  // Function to generate a random CAPTCHA question
-  function generateCaptcha() {
-      const num1 = Math.floor(Math.random() * 10);
-      const num2 = Math.floor(Math.random() * 10);
-      const operator = Math.random() < 0.5 ? '+' : '-';
-      const question = `${num1} ${operator} ${num2}`;
-      
-      document.getElementById('captcha-question').innerText = `Solve: ${question}`;
-      document.getElementById('captcha-answer').value = eval(question);
-  }
-
-  // Call the function to generate the CAPTCHA on page load
-  window.onload = generateCaptcha;
-
-  document.getElementById("contact-form").onsubmit = function(event) {
-      event.preventDefault(); // Prevent the default form submission
-
-      var formData = new FormData(this);
-      
-      // Validate CAPTCHA before sending request
-      if (formData.get("captcha") !== formData.get("captcha-answer")) {
-          document.getElementById("response-message").innerText = "Incorrect CAPTCHA. Please try again.";
-          return;
-      }
-
-      fetch('contact.php', {
-          method: 'POST',
-          body: formData
-      })
-      .then(response => response.text())
-      .then(data => {
-          document.getElementById("response-message").innerText = data === "success" ? "Message sent!" : "Error sending message.";
-      })
-      .catch(() => {
-          document.getElementById("response-message").innerText = "Error sending message.";
-      });
-  };
-  </script>
 
 </body>
 </html>
