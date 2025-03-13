@@ -34,6 +34,64 @@
   <section id="projects">
 
     <div class="project-card">
+      <h3><i>The Reset</i></h3>
+            
+      <!-- Slideshow container -->
+      <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 4</div>
+          <img src="images/resethome.png" alt="Homepage screenshot of 'The Reset'">
+          <div class="text">Homepage</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 4</div>
+          <img src="images/resetauthor.png" alt="Author's page screenshot of 'The Reset'">
+          <div class="text">Author's page</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 4</div>
+          <img src="images/resetsummary.png" alt="Summary page screenshot of 'The Reset'">
+          <div class="text">Summary page</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">4 / 4</div>
+          <img src="images/resetmobiletest.png" alt="Mobile rating page screenshot of 'The Reset'">
+          <div class="text">Mobile Rating</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+
+      <!-- The dots/circles -->
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
+
+      <p><i>The Reset</i> </p>
+      <a href="https://melinabricker.com/" target="_blank">Visit Site!</a>
+      <h2>Tech Used:</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>GitHub Pages</li>
+        <li>Git</li>
+        <li>GoDaddy</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
       <h3>Spokane Tribal Enterprises</h3>
       <p>I developed an interactive website for Spokane Tribal Enterprises using HTML, CSS, and JavaScript, showcasing the various businesses owned by the Spokane Tribe in Washington. I built the original version of the site in 2020, focusing on creating a user-friendly and visually engaging platform. The website highlights the Tribe's diverse business ventures and serves as a key online presence for their enterprises.</p>
       <a href="https://spokanetribalenterprises.com/" target="_blank">Visit Site!</a>
@@ -145,7 +203,35 @@
     <p>&copy; 2024 Scott Lee. All rights reserved. | U.S. Army Veteran Owned</p>
   </footer>
 
+  <!-- Slideshow JavaScript -->
+  <script>
+    let slideIndex = 1;
+
+    function showSlides(n) {
+      let slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    // Initial slide
+    showSlides(slideIndex);
+  </script>
 
 </body>
 </html>
- 
